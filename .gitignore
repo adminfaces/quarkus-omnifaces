@@ -11,3 +11,4 @@ dist/
 rebel.xml
 *.iml
 /.idea
+/system-tests/target/

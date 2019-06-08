@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:o="http://omnifaces.org/ui">
+
+<h:head>
+</h:head>
+
+<f:metadata>
+    <f:viewParam name="id" value="#{viewScopeBean.id}" converter="javax.faces.Integer" />
+    <f:viewAction action="#{viewScopeBean.viewAction}" />
+    <f:event type="preRenderView" listener="#{viewScopeBean.preRenderView}"/>
+</f:metadata>
+
+<h:body>
+
+    <h:form>
+        <!--<o:messages showDetail="true"/>-->
+        <h:messages showDetail="true"/>
+        <h:panelGrid columns="2" id="inputs">
+            <h:outputLabel value="Id:" for="id"/>
+            <h:inputText required="true" value="#{viewScopeBean.sampleBean.id}" id="id" />
+            <h:outputLabel value="Name:" for="name"/>
+            <h:inputText required="true" value="#{viewScopeBean.sampleBean.name}" id="name" />
+            <h:outputLabel value="ViewAction:" for="viewAction"/>
+            <h:outputText id="viewAction" value="#{viewScopeBean.viewAction}"/>
+            <h:outputLabel value="preRenderView:" for="preRenderView"/>
+            <h:outputText id="preRenderView" value="#{viewScopeBean.preRenderView}"/>
+            <h:outputLabel value="projectStage:" for="projectStage"/>
+            <h:outputText id="projectStage" value="#{viewScopeBean.projectStage}"/>
+        </h:panelGrid>
+        <h:commandButton value="Save" action="#{viewScopeBean.save}">
+            <f:ajax execute="inputs" render="@form"/>
+        </h:commandButton>
+    </h:form>
+</h:body>
+
+</html>
+
