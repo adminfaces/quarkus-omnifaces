@@ -33,16 +33,14 @@ public class QuarkusOmniFacesTest {
 
             final HtmlPage page = webClient.getPage(url + "/index.xhtml?id=1");
 
-            assertThat(page.getTitleText()).isEqualTo("Welcome to Quarkus OmniFaces extension!");
-            assertThat(page.getElementById("id"))
-                    .isNotNull();
+            assertThat(page.getTitleText())
+                    .isEqualTo("Welcome to Quarkus OmniFaces extension!");
             assertThat(page.getElementById("id").asText())
                     .contains("1");
-            assertThat(page.getElementById("viewAction")).isNotNull();
-            assertThat(page.getElementById("viewAction").asText()).startsWith("viewAction was called");
-
-            assertThat(page.getElementById("preRenderView")).isNotNull();
-            assertThat(page.getElementById("preRenderView").asText()).startsWith("preRenderView was called");
+            assertThat(page.getElementById("viewAction").asText())
+                    .startsWith("viewAction was called");
+            assertThat(page.getElementById("preRenderView").asText())
+                    .startsWith("preRenderView was called");
 
             final HtmlForm form = page.getFormByName("form");
 
