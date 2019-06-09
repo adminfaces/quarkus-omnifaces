@@ -67,13 +67,6 @@ public class ViewScopeBean {
         this.sampleBean = sampleBean;
     }
 
-    /*
-     * @Named("projectStage")
-     * 
-     * @ApplicationScoped
-     * 
-     * @Produces
-     */
     public String getProjectStage() {
         return projectStage;
     }

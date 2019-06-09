@@ -2,9 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:o="http://omnifaces.org/ui">
 
 <h:head>
+    <title>Welcome to Quarkus OmniFaces extension!</title>
 </h:head>
 
 <f:metadata>
@@ -15,9 +17,9 @@
 
 <h:body>
 
-    <h:form>
-        <!--<o:messages showDetail="true"/>-->
-        <h:messages showDetail="true"/>
+    <h:form id="form" prependId="false">
+        <!--<o:messages showDetail="true"/> Undefined component type org.omnifaces.component.messages.OmniMessages -->
+        <h:messages />
         <h:panelGrid columns="2" id="inputs">
             <h:outputLabel value="Id:" for="id"/>
             <h:inputText required="true" value="#{viewScopeBean.sampleBean.id}" id="id" />
@@ -30,9 +32,7 @@
             <h:outputLabel value="projectStage:" for="projectStage"/>
             <h:outputText id="projectStage" value="#{viewScopeBean.projectStage}"/>
         </h:panelGrid>
-        <h:commandButton value="Save" action="#{viewScopeBean.save}">
-            <f:ajax execute="inputs" render="@form"/>
-        </h:commandButton>
+        <p:commandButton id="btn-save" ajax="true" update="@form" value="Save" action="#{viewScopeBean.save}"/>
     </h:form>
 </h:body>
 
