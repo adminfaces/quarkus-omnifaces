@@ -18,8 +18,7 @@
 <h:body>
 
     <h:form id="form" prependId="false">
-        <!--<o:messages showDetail="true"/> Undefined component type org.omnifaces.component.messages.OmniMessages -->
-        <h:messages />
+        <o:messages showDetail="false"/>
         <h:panelGrid columns="2" id="inputs">
             <h:outputLabel value="Id:" for="id"/>
             <h:inputText required="true" value="#{viewScopeBean.sampleBean.id}" id="id" />

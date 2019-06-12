@@ -42,14 +42,14 @@ To build the quarkus extension you need to add jboss maven repository to your ma
     <repository>
         <id>jboss</id>
         <name>jboss repo</name>
-        <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+        <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
     </repository>
 </repositories>
 <pluginRepositories>
     <pluginRepository>
         <id>jboss</id>
         <name>jboss repo</name>
-        <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+        <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
    </pluginRepository>
 </pluginRepositories>
 ----
@@ -60,11 +60,20 @@ To build the quarkus extension you need to add jboss maven repository to your ma
 
 `mvn clean package`
 
-=== Run Admin starter 
 
-Run sample application
+=== Run sample application
 
-* `git clone https://github.com/adminfaces/quarkus-admin-starter && cd quarkus-admin-starter && mvn compile quarkus:dev`
-* access http://localhost:8080/
+* `cd system-tests && mvn compile quarkus:dev`
+* access http://localhost:8080/index.xhtml
 
-TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-admin-starter-1.0-SNAPSHOT-runner.jar`
+TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-omnifaces-st-runner.jar.jar`
+
+=== Run System tests
+
+`mvn clean test`
+
+
+=== Running Admin Starter application
+
+Quarkus admin starter is a more elaborated application which uses omnifaces and quarkus myfaces extension. Follow the instructions on quarkus-admin-starter in order to run it.
+
