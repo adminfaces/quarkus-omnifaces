@@ -62,6 +62,7 @@ Currently this project depends on the trunk version of OmniFaces to be released 
 
 `git clone https://github.com/omnifaces/omnifaces && mvn versions:set -DnewVersion=3.4 && mvn clean install -DskipTests`
 
+TIP: This step will not be needed after the release of `OmniFaces 3.4`
 
 === Build this project
 
