@@ -83,5 +83,5 @@ TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-
 
 === Running Admin Starter application
 
-Quarkus admin starter is a more elaborated application which uses omnifaces and quarkus myfaces extension. Follow the instructions on quarkus-admin-starter in order to run it.
+https://github.com/adminfaces/quarkus-admin-starter[Quarkus admin starter^] is a more elaborated application which uses omnifaces and quarkus myfaces extension. Follow the instructions on quarkus-admin-starter in order to run it.
 
