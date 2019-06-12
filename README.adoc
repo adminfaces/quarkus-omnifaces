@@ -58,7 +58,7 @@ To build the quarkus extension you need to add jboss maven repository to your ma
 
 === Build OmniFaces
 
-Currently this project depends on the trunk version of OmniFaces to be released as *v3.4*, follow the steps below to install it locally:
+Currently this project depends on the trunk version of OmniFaces to be released as *v3.4*, execute the commands below to install it locally:
 
 `git clone https://github.com/omnifaces/omnifaces && mvn versions:set -DnewVersion=3.4 && mvn clean install -DskipTests`
 
