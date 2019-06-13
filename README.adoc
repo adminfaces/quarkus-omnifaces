@@ -64,14 +64,14 @@ Currently this project depends on the trunk version of OmniFaces to be released 
 
 === Install quarkus omnifaces
 
-`mvn install package`
+`mvn clean install`
 
 === Run sample application
 
 * `cd system-tests && mvn compile quarkus:dev`
 * access http://localhost:8080/index.xhtml
 
-TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-omnifaces-st-runner.jar.jar`
+TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-omnifaces-st-runner.jar`
 
 === Run System tests
 
