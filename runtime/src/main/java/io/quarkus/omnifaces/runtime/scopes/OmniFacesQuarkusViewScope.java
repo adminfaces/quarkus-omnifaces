@@ -18,7 +18,6 @@ package io.quarkus.omnifaces.runtime.scopes;
 import static org.omnifaces.util.Beans.getReference;
 
 import java.lang.annotation.Annotation;
-import java.util.Collection;
 
 import javax.enterprise.context.spi.Contextual;
 import javax.enterprise.context.spi.CreationalContext;
@@ -26,7 +25,6 @@ import javax.enterprise.context.spi.CreationalContext;
 import org.omnifaces.cdi.viewscope.ViewScopeContext;
 import org.omnifaces.cdi.viewscope.ViewScopeManager;
 
-import io.quarkus.arc.ContextInstanceHandle;
 import io.quarkus.arc.InjectableContext;
 
 public class OmniFacesQuarkusViewScope implements InjectableContext {
@@ -38,14 +36,14 @@ public class OmniFacesQuarkusViewScope implements InjectableContext {
     }
 
     @Override
-    public Collection<ContextInstanceHandle<?>> getAll() {
-        return null;
-    }
-
-    @Override
     public void destroy() {
         ViewScopeManager reference = getReference(ViewScopeManager.class);
         reference.preDestroyView();
+    }
+
+    @Override
+    public ContextState getState() {
+        return null;
     }
 
     @Override

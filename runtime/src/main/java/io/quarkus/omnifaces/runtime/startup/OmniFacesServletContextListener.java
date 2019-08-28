@@ -15,19 +15,15 @@ limitations under the License.
  */
 package io.quarkus.omnifaces.runtime.startup;
 
-import javax.enterprise.inject.spi.CDI;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-
-import io.quarkus.omnifaces.runtime.ServletContextProducer;
 
 @WebListener
 public class OmniFacesServletContextListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        CDI.current().select(ServletContextProducer.class).get().setServletContext(sce.getServletContext());
     }
 
     @Override
