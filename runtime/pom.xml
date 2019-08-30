@@ -34,6 +34,11 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-api</artifactId>
+            <version>2.1.29-11</version>
+        </dependency>
          <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-myfaces</artifactId>
