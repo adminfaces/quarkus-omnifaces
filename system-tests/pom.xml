@@ -19,13 +19,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <version>0.21.1</version>
+    <version>0.22.0</version>
     <groupId>io.quarkus</groupId>
     <artifactId>quarkus-omnifaces-st</artifactId>
     <name>Quarkus - OmniFaces - System tests </name>
 
      <properties>
-        <quarkus.version>0.21.1</quarkus.version>
+        <quarkus.version>0.22.0</quarkus.version>
         <failsafe.version>2.22.0</failsafe.version>
         <surefire.version>2.22.0</surefire.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
