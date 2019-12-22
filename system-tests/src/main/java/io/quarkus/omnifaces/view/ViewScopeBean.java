@@ -1,5 +1,6 @@
 package io.quarkus.omnifaces.view;
 
+import java.io.Serializable;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -11,7 +12,7 @@ import org.omnifaces.util.Messages;
 
 @Named
 @ViewScoped
-public class ViewScopeBean {
+public class ViewScopeBean implements Serializable {
 
     String viewAction;
     String preRenderView;

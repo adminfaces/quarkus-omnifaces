@@ -25,7 +25,7 @@ This project depends on `MyFaces` and `Quarkus MyFaces` extension.
 === Build MyFaces 
 
 * clone https://github.com/apache/myfaces.git 
-* `mvn versions:set -DnewVersion=3.0.0-M1 -DprocessAllModules` (NOTE: we need to update the version to M1 as Quarkus does _NOT_ support snapshots)
+* `mvn versions:set -DnewVersion=3.0.0-SNAPSHOT -DprocessAllModules` (needed while myfaces 3.x is not released)
 * `mvn clean install -DskipTests`
 
 === Build quarkus-myfaces
@@ -56,11 +56,6 @@ To build the quarkus extension you need to add jboss maven repository to your ma
 
 ====
 
-=== Build OmniFaces
-
-Currently this project depends on the trunk version of OmniFaces to be released as *v3.4*, execute the commands below to install it locally:
-
-`git clone https://github.com/omnifaces/omnifaces && mvn versions:set -DnewVersion=3.4 && mvn clean install -DskipTests`
 
 === Install quarkus omnifaces
 
@@ -80,5 +75,5 @@ TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-
 
 === Running Admin Starter application
 
-https://github.com/adminfaces/quarkus-admin-starter[Quarkus admin starter^] is a more elaborated application which uses omnifaces and quarkus myfaces extension. Follow the instructions on quarkus-admin-starter in order to run it.
+https://github.com/adminfaces/quarkus-admin-starter[Quarkus admin starter^] and https://github.com/adminfaces/quarkus-admin-showcase[Quarkus admin showcase^] are more elaborated applications using quarkus-omnifaces and quarkus myfaces extension. Follow the instructions on quarkus-admin-starter in order to run it.
 
