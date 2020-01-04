@@ -17,7 +17,6 @@ import io.quarkus.deployment.annotations.BuildProducer;
 import io.quarkus.deployment.annotations.BuildStep;
 import io.quarkus.deployment.builditem.FeatureBuildItem;
 import io.quarkus.omnifaces.runtime.scopes.OmniFacesQuarkusViewScope;
-import io.quarkus.omnifaces.runtime.startup.OmniFacesServletContextListener;
 import io.quarkus.runtime.LaunchMode;
 import io.quarkus.runtime.configuration.ProfileManager;
 import io.quarkus.undertow.deployment.ListenerBuildItem;
@@ -45,8 +44,6 @@ public class OmniFacesProcessor {
             BuildProducer<AdditionalBeanBuildItem> additionalBean,
             BuildProducer<BeanDefiningAnnotationBuildItem> beanDefiningAnnotation,
             BuildProducer<ContextRegistrarBuildItem> contextRegistrar) throws IOException {
-
-        listener.produce(new ListenerBuildItem(OmniFacesServletContextListener.class.getName()));
 
         for (Class<?> clazz : BEAN_CLASSES) {
             additionalBean.produce(AdditionalBeanBuildItem.unremovableOf(clazz));

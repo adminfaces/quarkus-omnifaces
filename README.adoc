@@ -20,18 +20,14 @@ Enables OmniFaces in Quarkus applications
  
 == How to try it?
 
-This project depends on `MyFaces` and `Quarkus MyFaces` extension.
+This project depends on `MyFaces` and https://github.com/apache/myfaces/tree/master/extensions/quarkus[`Quarkus MyFaces` extension^].
 
-=== Build MyFaces 
+=== Install quarkus omnifaces extension
 
-* clone https://github.com/apache/myfaces.git 
-* `mvn versions:set -DnewVersion=3.0.0-SNAPSHOT -DprocessAllModules` (needed while myfaces 3.x is not released)
-* `mvn clean install -DskipTests`
+On the root of this project run:
 
-=== Build quarkus-myfaces
+`mvn clean install -DskipTests`
 
-* `git clone https://github.com/tandraschko/quarkus-myfaces && cd quarkus-myfaces/quarkus-myfaces && mvn clean install`
- 
 [TIP]
 ====
 
@@ -56,11 +52,6 @@ To build the quarkus extension you need to add jboss maven repository to your ma
 
 ====
 
-
-=== Install quarkus omnifaces
-
-`mvn clean install`
-
 === Run sample application
 
 * `cd system-tests && mvn compile quarkus:dev`
@@ -73,7 +64,7 @@ TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-
 `mvn clean test`
 
 
-=== Running Admin Starter application
+=== Other examples
 
-https://github.com/adminfaces/quarkus-admin-starter[Quarkus admin starter^] and https://github.com/adminfaces/quarkus-admin-showcase[Quarkus admin showcase^] are more elaborated applications using quarkus-omnifaces and quarkus myfaces extension. Follow the instructions on quarkus-admin-starter in order to run it.
+https://github.com/adminfaces/quarkus-admin-starter[Quarkus admin starter^] and https://github.com/adminfaces/quarkus-admin-showcase[Quarkus admin showcase^] are more elaborated applications using quarkus-omnifaces and quarkus myfaces extension. Follow the instructions on readme in order to run them.
 
