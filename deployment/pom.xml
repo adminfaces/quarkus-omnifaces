@@ -51,16 +51,6 @@
             <artifactId>quarkus-omnifaces</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.myfaces.core.extensions.quarkus</groupId>
-            <artifactId>myfaces-quarkus-runtime</artifactId>
-            <version>2.3-next-M1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.myfaces.core.extensions.quarkus</groupId>
-            <artifactId>myfaces-quarkus-deployment</artifactId>
-            <version>2.3-next-M1</version>
-        </dependency>
         <!-- test dependencies -->
         <dependency>
             <groupId>io.quarkus</groupId>
