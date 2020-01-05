@@ -29,10 +29,6 @@
     <artifactId>quarkus-omnifaces</artifactId>
     <name>Quarkus - OmniFaces - Runtime</name>
 
-    <properties>
-        <myfaces.version>2.3-next-M1</myfaces.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.apache.myfaces.core.extensions.quarkus</groupId>
