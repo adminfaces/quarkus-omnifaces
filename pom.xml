@@ -27,8 +27,11 @@
 
     <artifactId>quarkus-omnifaces-parent</artifactId>
     <name>Quarkus - OmniFaces</name>
-
     <packaging>pom</packaging>
+
+    <properties>
+        <quarkus.version>1.1.0.Final</quarkus.version>
+    </properties>
     <modules>
         <module>deployment</module>
         <module>runtime</module>
