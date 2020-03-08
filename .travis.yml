@@ -1,6 +1,6 @@
 dist: xenial
 language: java
-jdk: openjdk11
+jdk: openjdk8
 cache:
   directories:
     - "$HOME/.m2/repository"
