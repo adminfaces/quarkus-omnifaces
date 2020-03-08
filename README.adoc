@@ -60,9 +60,19 @@ To build the quarkus extension you need to add jboss maven repository to your ma
 
 TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-omnifaces-st-runner.jar`
 
+=== Native mode
+
+To run o quarkus native use:
+
+`mvn clean package -Pnative && ./target/quarkus-omnifaces-st-runner`
+
 === Run System tests
 
 `mvn clean test`
+
+=== Run native tests
+
+`mvn verify -Pnative`
 
 
 === Other examples
