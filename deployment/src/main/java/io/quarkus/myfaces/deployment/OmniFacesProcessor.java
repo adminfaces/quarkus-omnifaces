@@ -15,7 +15,9 @@ import io.quarkus.arc.deployment.ContextRegistrarBuildItem;
 import io.quarkus.arc.processor.ContextRegistrar;
 import io.quarkus.deployment.annotations.BuildProducer;
 import io.quarkus.deployment.annotations.BuildStep;
+import io.quarkus.deployment.builditem.CombinedIndexBuildItem;
 import io.quarkus.deployment.builditem.FeatureBuildItem;
+import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
 import io.quarkus.omnifaces.runtime.scopes.OmniFacesQuarkusViewScope;
 import io.quarkus.runtime.LaunchMode;
 import io.quarkus.runtime.configuration.ProfileManager;
@@ -59,6 +61,26 @@ public class OmniFacesProcessor {
                 registrationContext.configure(ViewScoped.class).normal().contextClass(OmniFacesQuarkusViewScope.class).done();
             }
         }));
+
+    }
+
+    @BuildStep
+    void registerForReflection(BuildProducer<ReflectiveClassBuildItem> reflectiveClass,
+            CombinedIndexBuildItem combinedIndex) {
+
+        //most of the classes registered for reflection below are used in OmniFaces functions (omnifaces-functions.taglib.xml)
+        //myfaces (org.apache.myfaces.view.facelets.compiler.TagLibraryConfig.create) uses reflection to register facelets functions
+        reflectiveClass.produce(new ReflectiveClassBuildItem(false, false, "java.util.Set",
+                "java.util.List", "java.lang.Iterable", "java.util.Collection", "java.lang.Throwable", "java.util.Date",
+                "java.util.Calendar", "java.time.LocalDate", "java.time.LocalDateTime", "java.lang.Integer",
+                "java.lang.Long", "java.lang.Double", "java.lang.String", "java.lang.Number"));
+
+        reflectiveClass.produce(new ReflectiveClassBuildItem(true, false,
+                "org.omnifaces.el.functions.Strings", "org.omnifaces.el.functions.Arrays",
+                "org.omnifaces.el.functions.Components", "org.omnifaces.el.functions.Dates",
+                "org.omnifaces.el.functions.Numbers", "org.omnifaces.el.functions.Objects",
+                "org.omnifaces.el.functions.Converters", "org.omnifaces.util.Faces",
+                "org.apache.myfaces.renderkit.html.HtmlResponseStateManager"));
     }
 
     @BuildStep

@@ -21,7 +21,7 @@
     <parent>
         <artifactId>quarkus-build-parent</artifactId>
         <groupId>io.quarkus</groupId>
-        <version>1.1.0.Final</version>
+        <version>1.2.1.Final</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -30,8 +30,8 @@
     <packaging>pom</packaging>
 
     <properties>
-        <quarkus.version>1.1.0.Final</quarkus.version>
-        <myfaces.version>2.3-next-M1</myfaces.version>
+        <quarkus.version>1.2.1.Final</quarkus.version>
+        <myfaces.version>2.3-next-SNAPSHOT</myfaces.version>
     </properties>
     <modules>
         <module>deployment</module>
