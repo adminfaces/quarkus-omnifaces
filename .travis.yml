@@ -1,19 +1,9 @@
 dist: bionic
 language: java
-jdk: openjdk8
+jdk: openjdk11
 cache:
   directories:
     - "$HOME/.m2/repository"
 
-before_install:
-  - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
-  - export MAVEN_OPTS="-Xms2g -Xmx14g"
-
-matrix:
-  include:
-    # GraalVM
-    - env: JDK='GraalVM 20'
-      install: . ./install-jdk.sh --url "https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java8-linux-amd64-20.0.0.tar.gz"
-
 script:
-  - mvn -e clean install -Pnative -Dnative-image.docker-build=true
+  - mvn clean test
