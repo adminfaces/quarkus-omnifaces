@@ -19,7 +19,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <version>1.2.1.Final</version>
+    <version>1.3.1.Final</version>
     <groupId>io.quarkus</groupId>
     <artifactId>quarkus-omnifaces-st</artifactId>
     <name>Quarkus - OmniFaces - System tests </name>
@@ -54,7 +54,7 @@
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>7.0</version>
+            <version>8.0</version>
         </dependency>
         <dependency>
             <groupId>jakarta.xml.bind</groupId> <!-- java 11 support -->
@@ -77,6 +77,18 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>3.6.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency> <!-- workaround for https://github.com/quarkusio/quarkus/issues/7359 -->
+            <groupId>com.fasterxml.woodstox</groupId>
+            <artifactId>woodstox-core</artifactId>
+            <version>5.0.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.5.12</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

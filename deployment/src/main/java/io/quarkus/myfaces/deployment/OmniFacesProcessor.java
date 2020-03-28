@@ -12,7 +12,6 @@ import org.omnifaces.resourcehandler.CombinedResourceHandler;
 import io.quarkus.arc.deployment.AdditionalBeanBuildItem;
 import io.quarkus.arc.deployment.BeanDefiningAnnotationBuildItem;
 import io.quarkus.arc.deployment.ContextRegistrarBuildItem;
-import io.quarkus.arc.processor.ContextRegistrar;
 import io.quarkus.deployment.annotations.BuildProducer;
 import io.quarkus.deployment.annotations.BuildStep;
 import io.quarkus.deployment.builditem.CombinedIndexBuildItem;
@@ -55,13 +54,8 @@ public class OmniFacesProcessor {
     @BuildStep
     void buildCdiScopes(BuildProducer<ContextRegistrarBuildItem> contextRegistrar) throws IOException {
 
-        contextRegistrar.produce(new ContextRegistrarBuildItem(new ContextRegistrar() {
-            @Override
-            public void register(ContextRegistrar.RegistrationContext registrationContext) {
-                registrationContext.configure(ViewScoped.class).normal().contextClass(OmniFacesQuarkusViewScope.class).done();
-            }
-        }));
-
+        contextRegistrar.produce(new ContextRegistrarBuildItem(registrationContext -> registrationContext
+                .configure(ViewScoped.class).normal().contextClass(OmniFacesQuarkusViewScope.class).done(), ViewScoped.class));
     }
 
     @BuildStep
@@ -79,8 +73,8 @@ public class OmniFacesProcessor {
                 "org.omnifaces.el.functions.Strings", "org.omnifaces.el.functions.Arrays",
                 "org.omnifaces.el.functions.Components", "org.omnifaces.el.functions.Dates",
                 "org.omnifaces.el.functions.Numbers", "org.omnifaces.el.functions.Objects",
-                "org.omnifaces.el.functions.Converters", "org.omnifaces.util.Faces",
-                "org.apache.myfaces.renderkit.html.HtmlResponseStateManager"));
+                "org.omnifaces.el.functions.Converters", "org.omnifaces.util.Faces", "org.primefaces.util.ComponentUtils",
+                "org.apache.myfaces.renderkit.html.HtmlResponseStateManager", "org.primefaces.extensions.util.ComponentUtils"));
     }
 
     @BuildStep
