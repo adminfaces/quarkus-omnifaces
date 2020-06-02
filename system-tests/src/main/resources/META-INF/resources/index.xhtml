@@ -26,10 +26,12 @@
             <h:inputText required="true" value="#{viewScopeBean.sampleBean.name}" id="name" />
             <h:outputLabel value="ViewAction:" for="viewAction"/>
             <h:outputText id="viewAction" value="#{viewScopeBean.viewAction}"/>
-            <h:outputLabel value="preRenderView:" for="preRenderView"/>
+            <h:outputLabel value="PreRenderView:" for="preRenderView"/>
             <h:outputText id="preRenderView" value="#{viewScopeBean.preRenderView}"/>
-            <h:outputLabel value="projectStage:" for="projectStage"/>
+            <h:outputLabel value="ProjectStage:" for="projectStage"/>
             <h:outputText id="projectStage" value="#{viewScopeBean.projectStage}"/>
+            <h:outputLabel value="Session timeout:" for="sessionTimeout"/>
+            <h:outputText id="sessionTimeout" value="#{viewScopeBean.sessionTimeout}"/>
         </h:panelGrid>
         <p:commandButton id="btn-save" ajax="true" update="@form" value="Save" action="#{viewScopeBean.save}"/>
     </h:form>

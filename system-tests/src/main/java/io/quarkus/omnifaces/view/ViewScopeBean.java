@@ -8,6 +8,7 @@ import javax.inject.Named;
 
 import org.omnifaces.cdi.ContextParam;
 import org.omnifaces.cdi.ViewScoped;
+import org.omnifaces.config.WebXml;
 import org.omnifaces.util.Messages;
 
 @Named
@@ -18,6 +19,7 @@ public class ViewScopeBean implements Serializable {
     String preRenderView;
     Integer id;
     SampleBean sampleBean;
+    Integer sessionTimeout;
 
     @Inject
     @ContextParam(name = "javax.faces.PROJECT_STAGE")
@@ -34,6 +36,7 @@ public class ViewScopeBean implements Serializable {
             sampleBean = new SampleBean();
         }
         preRenderView = "preRenderView was called " + System.currentTimeMillis();
+        sessionTimeout =  WebXml.instance().getSessionTimeout();
     }
 
     public void viewAction() {
@@ -70,6 +73,10 @@ public class ViewScopeBean implements Serializable {
 
     public String getProjectStage() {
         return projectStage;
+    }
+
+    public Integer getSessionTimeout() {
+        return sessionTimeout;
     }
 
     public void save() {
