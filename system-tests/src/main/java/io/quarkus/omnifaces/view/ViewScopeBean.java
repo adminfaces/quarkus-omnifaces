@@ -73,6 +73,7 @@ public class ViewScopeBean implements Serializable {
     }
 
     public void save() {
+        beans.put(id, sampleBean);
         Messages.addInfo(null, "Form saved!");
     }
 
