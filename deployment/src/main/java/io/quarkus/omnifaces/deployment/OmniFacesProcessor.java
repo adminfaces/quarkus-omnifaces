@@ -1,4 +1,4 @@
-package io.quarkus.myfaces.deployment;
+package io.quarkus.omnifaces.deployment;
 
 import java.io.IOException;
 
