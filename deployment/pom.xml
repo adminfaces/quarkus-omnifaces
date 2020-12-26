@@ -21,8 +21,8 @@
     <parent>
         <artifactId>quarkus-omnifaces-parent</artifactId>
         <groupId>io.quarkus</groupId>
-        <version>1.5.0.Final</version>
-        <relativePath>../</relativePath>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -30,6 +30,14 @@
     <name>Quarkus - OmniFaces - Deployment</name>
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.myfaces.core.extensions.quarkus</groupId>
+            <artifactId>myfaces-quarkus</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.myfaces.core.extensions.quarkus</groupId>
+            <artifactId>myfaces-quarkus-deployment</artifactId>
+        </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-core-deployment</artifactId>

@@ -21,8 +21,8 @@
     <parent>
         <groupId>io.quarkus</groupId>
         <artifactId>quarkus-omnifaces-parent</artifactId>
-        <version>1.5.0.Final</version>
-        <relativePath>../</relativePath>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -33,7 +33,6 @@
         <dependency>
             <groupId>org.apache.myfaces.core.extensions.quarkus</groupId>
             <artifactId>myfaces-quarkus</artifactId>
-            <version>${myfaces.version}</version>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
@@ -43,7 +42,11 @@
         <dependency>
             <groupId>org.omnifaces</groupId>
             <artifactId>omnifaces</artifactId>
-            <version>3.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>jakarta.el</artifactId>
+            <version>4.0.1</version>
         </dependency>
         <!-- test dependencies -->
         <dependency>

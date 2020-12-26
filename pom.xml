@@ -23,11 +23,11 @@
     <artifactId>quarkus-omnifaces-parent</artifactId>
     <name>Quarkus - OmniFaces</name>
     <packaging>pom</packaging>
-    <version>1.5.0.Final</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
-        <quarkus.version>1.5.0.Final</quarkus.version>
-        <myfaces.version>2.3-next-SNAPSHOT</myfaces.version>
+        <quarkus.version>1.7.6.Final</quarkus.version>
+        <myfaces.version>2.3-next-M4</myfaces.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -37,4 +37,33 @@
         <module>system-tests</module>
     </modules>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-bom</artifactId>
+                <version>${quarkus.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.myfaces.core.extensions.quarkus</groupId>
+                <artifactId>myfaces-quarkus</artifactId>
+                <version>${myfaces.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.myfaces.core.extensions.quarkus</groupId>
+                <artifactId>myfaces-quarkus-deployment</artifactId>
+                <version>${myfaces.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.omnifaces</groupId>
+                <artifactId>omnifaces</artifactId>
+                <version>3.9</version>
+            </dependency>
+        </dependencies>
+
+
+
+    </dependencyManagement>
 </project>
