@@ -4,7 +4,7 @@ dist/
 *.asc
 *.tern-project
 /bin
-/target
+target/
 /.settings
 /.project
 /.classpath
