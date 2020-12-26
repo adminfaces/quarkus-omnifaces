@@ -15,7 +15,7 @@
 :warning-caption: :warning:
 
 image:https://travis-ci.org/rmpestano/quarkus-omnifaces.svg[Build Status (Travis CI), link=https://travis-ci.org/rmpestano/quarkus-omnifaces]
-image:https://img.shields.io/maven-central/v/io.quarkus/quarkus-omnifaces.svg?label=Maven%20Central["Maven Central",link="https://search.maven.org/search?q=g:io.quarkus%20AND%20a:quarkus-omnifaces"]
+image:https://img.shields.io/maven-central/v/com.github.adminfaces/quarkus-omnifaces.svg?label=Maven%20Central["Maven Central",link="https://search.maven.org/search?q=g:com.github.adminfaces%20AND%20a:quarkus-omnifaces"]
 
 
 Enables OmniFaces in Quarkus applications
@@ -28,9 +28,9 @@ Just add the following dependency:
 [source, xml]
 ----
 <dependency>
-    <groupId>io.quarkus</groupId>
+    <groupId>com.github.adminfaces</groupId>
     <artifactId>quarkus-omnifaces</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ----
 
