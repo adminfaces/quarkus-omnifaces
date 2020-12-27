@@ -20,7 +20,6 @@ image:https://img.shields.io/maven-central/v/com.github.adminfaces/quarkus-omnif
 
 Enables OmniFaces in Quarkus applications
 
- 
 == How to try it?
 
 Just add the following dependency:
