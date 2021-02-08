@@ -28,7 +28,7 @@
         <connection>scm:git:https://github.com/adminfaces/quarkus-omnifaces.git</connection>
         <developerConnection>scm:git:git@github.com:adminfaces/quarkus-omnifaces.git</developerConnection>
         <url>https://github.com/adminfaces/quarkus-omnifaces.git</url>
-      <tag>HEAD</tag>
+      <tag>1.1.0</tag>
   </scm>
 
     <properties>
@@ -71,6 +71,20 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <useReleaseProfile>false</useReleaseProfile>
+                    <releaseProfiles>release</releaseProfiles>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <profiles>
         <profile>
