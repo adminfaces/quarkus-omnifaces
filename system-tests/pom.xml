@@ -12,7 +12,7 @@
     <name>Quarkus - OmniFaces - System tests </name>
 
      <properties>
-         <failsafe.version>2.22.0</failsafe.version>
+         <failsafe.version>2.22.2</failsafe.version>
          <surefire.version>2.22.0</surefire.version>
          <maven.compiler.source>11</maven.compiler.source>
          <maven.compiler.target>11</maven.compiler.target>
