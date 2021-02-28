@@ -29,7 +29,7 @@ Just add the following dependency:
 <dependency>
     <groupId>com.github.adminfaces</groupId>
     <artifactId>quarkus-omnifaces</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
 </dependency>
 ----
 
@@ -38,13 +38,13 @@ Just add the following dependency:
 * `cd system-tests && mvn compile quarkus:dev`
 * access http://localhost:8080/index.xhtml
 
-TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-omnifaces-st-runner.jar`
+TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-app/quarkus-run.jar`
 
 === Native mode
 
 To run o quarkus native use:
 
-`mvn clean package -Pnative && ./target/quarkus-omnifaces-st-runner`
+`mvn clean package -Pnative && ./target/quarkus-app/quarkus-run`
 
 === Run System tests
 
