@@ -13,10 +13,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.myfaces.core.extensions.quarkus</groupId>
-            <artifactId>myfaces-quarkus</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.github.adminfaces</groupId>
             <artifactId>quarkus-omnifaces</artifactId>
             <version>${project.version}</version>
