@@ -2,6 +2,7 @@ package io.quarkus.omnifaces.deployment;
 
 import java.io.IOException;
 
+import org.jboss.jandex.DotName;
 import org.omnifaces.cdi.ViewScoped;
 import org.omnifaces.cdi.converter.ConverterManager;
 import org.omnifaces.cdi.eager.EagerBeansRepository;
@@ -11,7 +12,9 @@ import org.omnifaces.resourcehandler.CombinedResourceHandler;
 
 import io.quarkus.arc.deployment.AdditionalBeanBuildItem;
 import io.quarkus.arc.deployment.BeanDefiningAnnotationBuildItem;
-import io.quarkus.arc.deployment.ContextRegistrarBuildItem;
+import io.quarkus.arc.deployment.ContextRegistrationPhaseBuildItem;
+import io.quarkus.arc.deployment.ContextRegistrationPhaseBuildItem.ContextConfiguratorBuildItem;
+import io.quarkus.arc.deployment.CustomScopeBuildItem;
 import io.quarkus.deployment.annotations.BuildProducer;
 import io.quarkus.deployment.annotations.BuildStep;
 import io.quarkus.deployment.builditem.CombinedIndexBuildItem;
@@ -20,8 +23,6 @@ import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
 import io.quarkus.omnifaces.runtime.scopes.OmniFacesQuarkusViewScope;
 import io.quarkus.runtime.LaunchMode;
 import io.quarkus.runtime.configuration.ProfileManager;
-import io.quarkus.undertow.deployment.ListenerBuildItem;
-import io.quarkus.undertow.deployment.ServletBuildItem;
 import io.quarkus.undertow.deployment.ServletInitParamBuildItem;
 
 public class OmniFacesProcessor {
@@ -39,24 +40,25 @@ public class OmniFacesProcessor {
     }
 
     @BuildStep
-    void buildCdiBeans(BuildProducer<FeatureBuildItem> feature,
-            BuildProducer<ServletBuildItem> servlet,
-            BuildProducer<ListenerBuildItem> listener,
-            BuildProducer<AdditionalBeanBuildItem> additionalBean,
-            BuildProducer<BeanDefiningAnnotationBuildItem> beanDefiningAnnotation,
-            BuildProducer<ContextRegistrarBuildItem> contextRegistrar) throws IOException {
-
-        for (Class<?> clazz : BEAN_CLASSES) {
+    void buildCdiBeans(BuildProducer<AdditionalBeanBuildItem> additionalBean,
+            BuildProducer<BeanDefiningAnnotationBuildItem> beanDefiningAnnotation) throws IOException {
+        for (Class<?> clazz : BEAN_CLASSES)
+        {
             additionalBean.produce(AdditionalBeanBuildItem.unremovableOf(clazz));
         }
     }
-
+    
     @BuildStep
-    void buildCdiScopes(BuildProducer<ContextRegistrarBuildItem> contextRegistrar) throws IOException {
-
-        contextRegistrar.produce(new ContextRegistrarBuildItem(registrationContext -> registrationContext
-                .configure(ViewScoped.class).normal().contextClass(OmniFacesQuarkusViewScope.class).done(), ViewScoped.class));
+    ContextConfiguratorBuildItem registerViewScopeContext(ContextRegistrationPhaseBuildItem phase)  {
+        return new ContextConfiguratorBuildItem(
+                phase.getContext().configure(ViewScoped.class).normal().contextClass(OmniFacesQuarkusViewScope.class));
     }
+    
+    @BuildStep
+    CustomScopeBuildItem viewScoped() {
+        return new CustomScopeBuildItem(DotName.createSimple(ViewScoped.class.getName()));
+    }
+
 
     @BuildStep
     void registerForReflection(BuildProducer<ReflectiveClassBuildItem> reflectiveClass,

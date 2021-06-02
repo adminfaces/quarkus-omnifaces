@@ -12,3 +12,9 @@ rebel.xml
 *.iml
 /.idea
 /system-tests/target/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
