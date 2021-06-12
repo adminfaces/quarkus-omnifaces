@@ -14,7 +14,7 @@
 :caution-caption: :fire:
 :warning-caption: :warning:
 
-image:https://travis-ci.org/adminfaces/quarkus-omnifaces.svg[Build Status (Travis CI), link=https://travis-ci.org/adminfaces/quarkus-omnifaces]
+image:https://github.com/adminfaces/quarkus-omnifaces/actions/workflows/ci.yml/badge.svg[Build Status, link=https://github.com/adminfaces/quarkus-omnifaces/actions/workflows/ci.yml]
 image:https://img.shields.io/maven-central/v/com.github.adminfaces/quarkus-omnifaces.svg?label=Maven%20Central["Maven Central",link="https://search.maven.org/search?q=g:com.github.adminfaces%20AND%20a:quarkus-omnifaces"]
 
 
@@ -29,7 +29,7 @@ Just add the following dependency:
 <dependency>
     <groupId>com.github.adminfaces</groupId>
     <artifactId>quarkus-omnifaces</artifactId>
-    <version>1.3.0</version>
+    <version>1.4.0</version>
 </dependency>
 ----
 
