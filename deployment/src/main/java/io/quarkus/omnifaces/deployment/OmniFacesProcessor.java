@@ -42,8 +42,7 @@ public class OmniFacesProcessor {
     @BuildStep
     void buildCdiBeans(BuildProducer<AdditionalBeanBuildItem> additionalBean,
             BuildProducer<BeanDefiningAnnotationBuildItem> beanDefiningAnnotation) throws IOException {
-        for (Class<?> clazz : BEAN_CLASSES)
-        {
+        for (Class<?> clazz : BEAN_CLASSES) {
             additionalBean.produce(AdditionalBeanBuildItem.unremovableOf(clazz));
         }
     }
@@ -58,7 +57,6 @@ public class OmniFacesProcessor {
     CustomScopeBuildItem viewScoped() {
         return new CustomScopeBuildItem(DotName.createSimple(ViewScoped.class.getName()));
     }
-
 
     @BuildStep
     void registerForReflection(BuildProducer<ReflectiveClassBuildItem> reflectiveClass,
