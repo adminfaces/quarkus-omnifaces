@@ -38,13 +38,13 @@ Just add the following dependency:
 * `cd system-tests && mvn compile quarkus:dev`
 * access http://localhost:8080/index.xhtml
 
-TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-app/quarkus-run.jar`
+TIP: Run via quarkus runner with `mvn clean package && java -jar system-tests/target/quarkus-app/quarkus-run.jar`
 
 === Native mode
 
 To run o quarkus native use:
 
-`mvn clean package -Pnative && ./target/quarkus-app/quarkus-run`
+`mvn clean package -Pnative &&  ./system-tests/target/quarkus-app/quarkus-run`
 
 === Run System tests
 
