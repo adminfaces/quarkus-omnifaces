@@ -1,4 +1,4 @@
-= Quarkus OmniFaces extension
+= Quarkus OmniFaces extension - This repo is not maintained anymore, go to: https://github.com/quarkiverse/quarkus-omnifaces
 :page-layout: base
 :source-language: java
 :icons: font
