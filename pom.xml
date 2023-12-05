@@ -32,7 +32,7 @@
   </scm>
 
     <properties>
-        <quarkus.version>2.2.1.Final</quarkus.version>
+        <quarkus.version>2.12.0.Final</quarkus.version>
         <myfaces.version>2.3-next-M6</myfaces.version>
         <omnifaces.version>3.11.1</omnifaces.version>
         <maven.compiler.source>1.8</maven.compiler.source>
